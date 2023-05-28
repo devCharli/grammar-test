@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <h1 className="text-3xl text-lime-700 font-bold underline">
-        App, Hello world!
+        Grammar app!
       </h1>
       <ul>
         <li>
@@ -20,7 +20,9 @@ function App() {
           <Link to="/grammar/test/1">Grammar Test 1</Link>
         </li>
       </ul>
-      <Button variant="contained">Contained</Button>
+      <Button variant="contained">
+        <Link to="/grammar/test/be-verb">Be verb</Link>
+      </Button>
       <AddReactionIcon />
     </div>
   );

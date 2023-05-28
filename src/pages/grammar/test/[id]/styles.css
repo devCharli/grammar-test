@@ -1,0 +1,68 @@
+button {
+  border: 1px solid transparent;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-option {
+  width: 100%;
+  background-color: white;
+  border: 2px solid black;
+  padding: 20px 50px;
+  font-weight: bold;
+  font-size: 24px;
+  position: relative;
+  color: black;
+  margin: 0 5px;
+}
+
+.button-option:after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  z-index: -1;
+}
+
+.button-option.correct {
+  color: white;
+  border-color: #72f94c;
+  background-color: #72f94c;
+}
+
+.button-option.correct:after {
+  background-color: black;
+}
+
+.button-option.wrong {
+  color: white;
+  border-color: #ec3323;
+  background-color: #ec3323;
+}
+
+.button-option.wrong:after {
+  color: white;
+  border-color: black;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 20px;
+  border: 3px solid black;
+  overflow: hidden;
+  margin-top: 30px;
+  padding: 3px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #1b23f5;
+  transition: width 0.5s ease;
+}
