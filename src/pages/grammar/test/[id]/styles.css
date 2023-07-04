@@ -16,7 +16,8 @@ button {
   font-size: 24px;
   position: relative;
   color: black;
-  margin: 0 5px;
+  margin: 15px 5px;
+  border-radius: 0.25rem;
 }
 
 .button-option:after {
@@ -28,41 +29,55 @@ button {
   right: -8px;
   bottom: -8px;
   z-index: -1;
+  border-radius: 0.25rem;
 }
 
 .button-option.correct {
-  color: white;
-  border-color: #72f94c;
-  background-color: #72f94c;
+  color: #0ba95b;
+  border-color: #0ba95b;
 }
 
 .button-option.correct:after {
-  background-color: black;
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  z-index: -1;
+  background-color: #0ba95b;
+  border-color: #0ba95b;
 }
 
 .button-option.wrong {
-  color: white;
   border-color: #ec3323;
-  background-color: #ec3323;
 }
 
 .button-option.wrong:after {
-  color: white;
-  border-color: black;
+  content: "";
+  position: absolute;
+  background-color: #ed203d;
+  border: #ed203d;
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  z-index: -1;
 }
 
 .progress-bar-container {
   width: 100%;
   height: 20px;
-  border: 3px solid black;
   overflow: hidden;
   margin-top: 30px;
-  padding: 3px;
+  border-radius: 3rem;
+  background-color: hsla(0, 0%, 72%, 0.3);
 }
 
 .progress-bar {
   width: 0%;
   height: 100%;
-  background-color: #1b23f5;
+  background-color: #00ff00;
   transition: width 0.5s ease;
+  border-radius: 3rem;
 }
