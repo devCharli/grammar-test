@@ -56,6 +56,7 @@ export default function Quiz({ questions }: QuizProps) {
     setStep(1);
     setScore(0);
     setProgress(0);
+    setIsAnswered(false);
   };
 
   return (
