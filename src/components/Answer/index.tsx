@@ -5,6 +5,7 @@ interface AnswerProps {
   score: number;
   questions: Question[];
   resetTest: () => void;
+  userAnswers: { questionId: number; answer: string }[];
 }
 
 export default function Answer({
@@ -12,6 +13,7 @@ export default function Answer({
   questions,
   resetTest,
   numOfQuestions,
+  userAnswers,
 }: AnswerProps) {
   return (
     <div>
@@ -24,14 +26,28 @@ export default function Answer({
         </button>
       </div>
       <div>
-        {questions
-          .slice(0, Math.min(numOfQuestions, numOfQuestions))
-          .map((question) => (
+        {userAnswers.map((userAnswer) => {
+          const question = questions.find(
+            (question) => question.id === userAnswer.questionId
+          );
+
+          if (!question) return null;
+          return (
             <div key={question.id} className="border-b-2 border-slate-200 mb-4">
-              <p>{question.text}</p>
-              <p>정답: {question.correct}</p>
+              <p
+                className={
+                  userAnswer.answer === question.correct
+                    ? styles.correct
+                    : styles.wrong
+                }
+              >
+                {question.text}
+              </p>
+              <p>Your answer: {userAnswer.answer}</p>
+              <p>Correct answer: {question.correct}</p>
             </div>
-          ))}
+          );
+        })}
       </div>
     </div>
   );

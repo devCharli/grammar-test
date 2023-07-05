@@ -1,23 +1,21 @@
 .resetBtn {
   width: 100%;
-  background-color: white;
   border: 2px solid black;
-  padding: 20px 50px;
+  padding: 3rem;
   font-weight: bold;
   font-size: 24px;
   position: relative;
   color: black;
   margin: 15px 5px;
   border-radius: 0.25rem;
+  background-color: #0aa;
+  box-shadow: 10px 10px 0 #000;
 }
 
-.resetBtn:after {
-  content: "";
-  position: absolute;
-  background-color: black;
-  top: -8px;
-  left: -8px;
-  right: 8px;
-  bottom: 8px;
-  z-index: -1;
+.correct {
+  color: #0ba95b;
+}
+
+.wrong {
+  color: #ec3323;
 }

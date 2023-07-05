@@ -28,6 +28,9 @@ export default function Quiz({ questions }: QuizProps) {
   const [score, setScore] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isAnswered, setIsAnswered] = useState(false);
+  const [userAnswers, setUserAnswers] = useState<
+    Array<{ questionId: number; answer: string }>
+  >([]);
   const numOfQuestions = questions.length;
 
   interface SelectAnswer {
@@ -41,6 +44,8 @@ export default function Quiz({ questions }: QuizProps) {
       setScore(score + 1);
     }
     setProgress((step / questions.length) * 100);
+    setUserAnswers((prevAnswers) => [...prevAnswers, { questionId, answer }]);
+
     setTimeout(() => {
       if (step < questions.length) {
         setStep(step + 1);
@@ -49,7 +54,7 @@ export default function Quiz({ questions }: QuizProps) {
         setStep(step + 1);
       }
       setSelectedAnswer(null);
-    }, 300);
+    }, 1000);
   };
 
   const resetTest = () => {
@@ -57,6 +62,7 @@ export default function Quiz({ questions }: QuizProps) {
     setScore(0);
     setProgress(0);
     setIsAnswered(false);
+    setUserAnswers([]); // Clear user's answers
   };
 
   return (
@@ -77,6 +83,7 @@ export default function Quiz({ questions }: QuizProps) {
           resetTest={resetTest}
           score={score}
           questions={questions}
+          userAnswers={userAnswers}
         />
       )}
     </div>
