@@ -1,5 +1,5 @@
 import { Question } from "../Test";
-import styles from "./styles.module.css";
+import "./styles.css";
 interface AnswerProps {
   numOfQuestions: number;
   score: number;
@@ -16,16 +16,19 @@ export default function Answer({
   userAnswers,
 }: AnswerProps) {
   return (
-    <div>
-      <h2>
+    <div className="p-5">
+      <h2 className="text-center text-2xl">
         Your score is {score}/{Math.min(numOfQuestions, numOfQuestions)}
       </h2>
-      <div className={styles.buttonWrapper}>
-        <button className={styles.resetBtn} onClick={resetTest}>
+      <div className="flex justify-center">
+        <button
+          className={`button-option text-lg reset-btn`}
+          onClick={resetTest}
+        >
           Reset
         </button>
       </div>
-      <div>
+      <div className="p-6">
         {userAnswers.map((userAnswer) => {
           const question = questions.find(
             (question) => question.id === userAnswer.questionId
@@ -33,12 +36,15 @@ export default function Answer({
 
           if (!question) return null;
           return (
-            <div key={question.id} className="border-b-2 border-slate-200 mb-4">
+            <div
+              key={question.id}
+              className="border-b-2 border-slate-200 last:border-b-0 mb-4"
+            >
               <p
                 className={
                   userAnswer.answer === question.correct
-                    ? styles.correct
-                    : styles.wrong
+                    ? `answer-correct`
+                    : `answer-wrong`
                 }
               >
                 {question.text}

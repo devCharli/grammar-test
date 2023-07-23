@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Answer from "./Answer";
 import QuizBox from "./Quiz";
+import Layout from "./Layout";
 
 export interface Question {
   id: number;
@@ -54,7 +55,7 @@ export default function Quiz({ questions }: QuizProps) {
         setStep(step + 1);
       }
       setSelectedAnswer(null);
-    }, 1000);
+    }, 500);
   };
 
   const resetTest = () => {
@@ -66,7 +67,7 @@ export default function Quiz({ questions }: QuizProps) {
   };
 
   return (
-    <div className="h-screen px-5 max-w-sm">
+    <Layout>
       {step >= 0 && step <= numOfQuestions ? (
         <QuizBox
           step={step}
@@ -86,6 +87,6 @@ export default function Quiz({ questions }: QuizProps) {
           userAnswers={userAnswers}
         />
       )}
-    </div>
+    </Layout>
   );
 }

@@ -1,0 +1,12 @@
+.reset-btn {
+  background-color: #f7d51d;
+  width: 60%;
+}
+
+.answer-correct {
+  color: #0ba95b;
+}
+
+.answer-wrong {
+  color: #ec3323;
+}

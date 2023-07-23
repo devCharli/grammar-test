@@ -1,20 +1,15 @@
 import { Link } from "react-router-dom";
+import Layout from "./components/Layout";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl text-lime-700 font-bold underline">
-        Grammar app!
-      </h1>
+    <Layout>
       <ul className="mt-9">
-        {/* <li>
-          <Link to="/grammar">Grammar</Link>
-        </li> */}
         <li>
           <Link to="/grammar/test">Grammar Test Page</Link>
         </li>
       </ul>
-    </div>
+    </Layout>
   );
 }
 

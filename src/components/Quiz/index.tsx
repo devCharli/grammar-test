@@ -27,21 +27,20 @@ export default function QuizBox({
   }, [questions, step]);
 
   return (
-    <div className="flex flex-col relative w-full">
-      <div className="flex relative">
-        <p className="absolute right-0">
-          {step}/{numOfQuestions}
-        </p>
-        <ProgressBar progress={progress} />
-      </div>
-      <h2>{questions[step - 1].text}</h2>
+    <div className="grid grid-col-3 h-screen p-6">
+      <ProgressBar
+        progress={progress}
+        step={step}
+        numOfQuestions={numOfQuestions}
+      />
+      <h2 className="text-xl text-center">{questions[step - 1].text}</h2>
       {step > 0 && step <= numOfQuestions && (
         <div className="">
           {options.map((option, index) => (
             <button
               key={index}
               onClick={() => selectAnswer(questions[step - 1].id, option)}
-              className={`button-option ${
+              className={`button-option text-lg	 ${
                 selectedAnswer === option
                   ? option === questions[step - 1].correct
                     ? "correct"

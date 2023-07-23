@@ -1,21 +1,14 @@
-.buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.button-option {
+.progress-bar-container {
   width: 100%;
+  height: 20px;
+  overflow: hidden;
   background-color: white;
-  padding: 20px 50px;
-  font-weight: bold;
-  font-size: 18px;
-  position: relative;
-  color: black;
-  margin: 15px 5px;
+  padding: 5px;
   box-shadow: 4px 0, -4px 0, 0 4px, 0 -4px;
+  position: relative;
 }
 
-.button-option::before {
+.progress-bar-container::before {
   top: -4px;
   left: 0;
   position: absolute;
@@ -27,7 +20,7 @@
   border-style: solid;
 }
 
-.button-option::after {
+.progress-bar-container ::after {
   top: 0;
   left: -4px;
   border-bottom: 2px;
@@ -40,10 +33,17 @@
   border-style: solid;
 }
 
-.button-option.correct {
-  background-color: #92cc41;
+.progress-bar {
+  background-color: #00ff00;
+  transition: width 0.3s ease;
+  height: 100%;
 }
 
-.button-option.wrong {
-  background-color: #e76e55;
+.progress-step {
+  position: absolute;
+  padding-right: 5px;
+  top: 50%;
+  right: 0;
+  margin: auto;
+  transform: translateY(-50%);
 }
