@@ -1,4 +1,54 @@
 export const quizzes = {
+  "주격-인칭대명사": [
+    {
+      id: 1,
+      text: "배고파요",
+      options: ["I am hungry", "hungry"],
+      correct: "I am hungry",
+    },
+    {
+      id: 2,
+      text: "(앞에 있는 친구에게) 화났어?",
+      options: ["Are they upset?", "Are you upset?"],
+      correct: "Are you upset?",
+    },
+    {
+      id: 3,
+      text: "(앞에 있는 관광객들에게) 어디서 오셨어요?",
+      options: ["Where is she from?", "Where are you guys from?"],
+      correct: "Where are you guys from?",
+    },
+    {
+      id: 4,
+      text: "(관광객들 대표로) 한국에서 왔어요.",
+      options: ["We are from Korea.", "I am from Korea."],
+      correct: "We are from Korea.",
+    },
+    {
+      id: 5,
+      text: "(톡으로) 자니?",
+      options: ["Are you awake?", "sleep?"],
+      correct: "Are you awake?",
+    },
+    {
+      id: 6,
+      text: "집에 갔어요. (같이 놀던 남자친구가)",
+      options: ["They went home.", "He went home."],
+      correct: "He went home.",
+    },
+    {
+      id: 7,
+      text: "언니 책 읽고 있어요.",
+      options: ["She is reading a book.", "He is reading a book."],
+      correct: "She is reading a book.",
+    },
+    {
+      id: 8,
+      text: "애들 tv 보고 있어요.",
+      options: ["We are watching TV.", "They are watching TV."],
+      correct: "They are watching TV.",
+    },
+  ],
   "1형식-be동사": [
     {
       id: 1,
